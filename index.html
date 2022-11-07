@@ -50,6 +50,7 @@
 	<meta name="twitter:title" content="Hubflixgo | Watch Latest Movies and TV-Series Online Free" />
 	<meta name="twitter:description" content="Watch Watch Latest Movies and TV-Series Online Free" />
 	<meta name="twitter:image" content="https://hubflixgo.netlify.app/og_image.webp" />
+	<link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”>
 		<link rel="apple-touch-icon" sizes="180x180" href="https://hubflixgo.netlify.app/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="https://hubflixgo.netlify.app/apple-touch-icon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="https://hubflixgo.netlify.app/apple-touch-icon-16x16.png">
@@ -128,22 +129,35 @@
 						
 						</div>
 		
-<br><br>
+
 		<!-- header search -->
-		<form action="#" class="header__search">
+			
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<div class="header__search-content">
-							<input type="text" placeholder="Search for a movie, TV Series that you are looking for">
-
-							<button type="button">search</button>
-						</div>
-					</div>
-				</div>
-			
-		</form>
+						<!-- header search -->	
+						<center>
+						<form id="form"> 
+							<input type="search" id="query" name="q" placeholder="Search for a movie, TV Series that you are looking for">
+							<button><span style="font-family: play; color: rgb(247, 7, 7); font-size: x-large; font-weight: bold;">Search</button></span>
+						  </form>
+						</center>
 		<!-- end header search -->
+		<script>
+		const f = document.getElementById('form');
+const q = document.getElementById('query');
+const google = 'https://hubflixgo.netlify.app/search?q=site%3A+';
+const site = 'hubflixgo.netlify.app/';
+
+function submitted(event) {
+  event.preventDefault();
+  const url = google + site + '+' + q.value;/
+  const win = window.open(url, '_blank');
+  win.focus();
+}
+
+f.addEventListener('submit', submitted);
+</script>
 	</header>
 	<!-- end header -->
 
