@@ -34,6 +34,10 @@
 <link href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css" rel="stylesheet">
 <script src="./path/to/video.min.js"></script>
 <script src="https://unpkg.com/@silvermine/videojs-quality-selector/dist/js/silvermine-videojs-quality-selector.min.js"></script>
+<link rel="stylesheet" type="text/css" href="path/to/video-js.min.css">
+<link rel="stylesheet" type="text/css" href="path/to/videojs-matrix.css">
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-quality-levels/2.2.0/videojs-contrib-quality-levels.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
 	<title>Watch American Muderer (2022) Full Movie Online Free | Hubflixgo</title>
@@ -73,7 +77,7 @@
 		.sub-div img{
 		transition:all 0.5s ease-in-out;
 		transform:scale(1.0);
-		width:150px;
+		width:100px;
 		height:300px;
 		}
 		.sub-div:hover img{
@@ -189,12 +193,16 @@
 								</div>
 							</div>
 							<!-- end card cover -->
-
+							<style>
+								.icon {
+							   font-size: 25px;
+							}
+							</style>
 							<!-- card content -->
 							<div class="col-12 col-sm-8 col-md-8 col-lg-9 col-xl-7">
 								<div class="card__content">
 									<div class="card__wrap">
-										<span class="card__rate"><i class="icon ion-ios-star"></i>8.4</span>
+										<span class="card__rate">IDBM Rating<i class="icon ion-ios-star"></i><i class="icon ion-ios-star-half"></i>4.9</span>
 
 										<ul class="card__list">
 											<li>HD</li>
@@ -206,7 +214,8 @@
 										<li><span>Genre:</span> <a href="#">Action</a>
 										<a href="#">Thriler</a></li>
 										<li><span>Release year:</span> <a href="#">2022</a></li>
-										<li><span>Running time:</span><a href="#"> 120 min</a></li>
+										<li><span>Running time:</span><a href="#"> 102 min</a></li>
+										<li><span>Director: </span><a href="#"> Matthew Gentile</a></li>
 										<li><span>Country:</span> <a href="#">USA</a> </li>
 										<li><span>Starring: <a href="#">Tom Pelphrey, Ryan Phillippe, Idina Menzel, Paul Schneider, Shantel VanSanten, Emelina Adams, Sila Agavale, Isaac Akers, Moises Arias, Emily Ashby, Tom Austin, Rich Chavez, Kevin Corrigan, Laura Dennis. </a> </li></span>
 									</ul>
@@ -225,15 +234,14 @@
 				<!-- player -->
 				<div class="col-12 col-xl-6">
 					<center>
-						<span style="font-family: play;  text-align: center; color: rgb(253, 253, 253); font-size: 20px; font-weight: bold;">Watch Official Trailer - American Murderer </span></center>
+						<span style="font-family: play;  text-align: center; color: rgb(253, 253, 253); font-size: 20px; font-weight: bold;"> Official Trailer - American Murderer </span></center>
 					<video
 			      id="my-video"
-				 class="video-js"
+				  class="vjs-matrix video-js"
 					controls
-					muted
-					autoplay
-					loop
-					width="640"
+					preload="auto"
+					poster="https://i3.ytimg.com/vi/DUq3QRWwXts/maxresdefault.jpg"
+                    width="640"
 					height="400"
 					data-setup="{}"  >		
 				  <source src="video/american-murderer-trailer.webm" type="video/webm" />						
@@ -247,7 +255,11 @@
                     var player = videojs('my-video');
 
 player.fluid(true);
-                </script>
+var player = videojs('my-video');
+
+player.addClass('vjs-matrix');
+
+</script>
 		<p></p>
 		<style>
 			.wrapper {
