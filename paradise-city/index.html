@@ -62,6 +62,36 @@
 <meta name="twitter:image" content="img/11/paradise-city-2022.webp" />
 <meta name="description" content="Watch Paradise City (2022) Full Movie Online on HubFlix, You can also download Paradise City (2022) in full HD quality to watch later offline." />
 
+<link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+
+<!-- unpkg : use a specific version of Video.js (change the version numbers as necessary) -->
+<link href="https://unpkg.com/video.js@7.10.2/dist/video-js.min.css" rel="stylesheet">
+<script src="https://unpkg.com/video.js@7.10.2/dist/video.min.js"></script>
+
+<!-- cdnjs : use a specific version of Video.js (change the version numbers as necessary) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video-js.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.3.3/video-js.css" rel="stylesheet" />
+
+<link href="node_modules/video.js/dist/video-js.css" rel="stylesheet">
+<link href="dist/videojs-seek-buttons.css" rel="stylesheet">
+
+<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/c/video.js"></script>
+<!--script src="../plugin/video.3.2.dev.js"></script-->
+
+<link href="../plugin/vast.plugin.css" rel="stylesheet">
+<script src="../plugin/vast.plugin.js"></script>
+
+<link href="http://vjs.zencdn.net/5.9.2/video-js.css" rel="stylesheet">
+<link href="link-to-custom-css/video-js-custom.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="popup-video.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
 <!-- BEGIN SHAREAHOLIC CODE -->
 <link rel="preload" href="https://platform-api.sharethis.com/js" as="script" />
 <script type="text/javascript" data-cfasync="false" async src="https://platform-api.sharethis.com/js/sharethis.js#property=636a60cae81dbd0012a64501&product=sticky-share-buttons&source=platform" async="async"></script>
@@ -187,10 +217,7 @@
 	<!-- end header -->
 	
 	<!-- details -->
-	<section class="section details">
-		<!-- details background -->
-		<div class="details__bg" data-bg="img/home/home__bg.jpg"></div>
-		<!-- end details background -->
+
 
 		<!-- details content -->
 		<div class="container">
@@ -202,8 +229,58 @@
 				<!-- end title -->
 			</style>
 			
+		 
+	
+	 <style> 
+
+.mfp-hide {
+    display: none!important;
+}
+.button {
+    padding: 20px 40px;
+    border-color: #f3f3f3;
+    font-size: 17px;
+    font-size: 1.7rem;
+    
+    font-weight: 500;
+    margin-top: 40px;
+    display: inline-block;
+}
+.button {
+    border: 2px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.15s ease-in-out;
+}
+.button .fa {
+    margin-left: 20px;
+}
+.button:hover {
+    background-color: rgba(0,0,0,0.7); 
+}
+h1 {
+    color: #fff;
+    font-size: 50px;
+    
+    text-transform: uppercase;
+    line-height: 72px;
+    letter-spacing: -5px;
+    margin: 185px 0 0 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+.content {
+  text-align: center;
+}
+</style>
+
 				<!-- content -->
-				<div class="col-12 col-xl-6">
+				<div class="col-12 col-xl-12">
 					<div class="card card--details">
 						<div class="row">
 							<!-- card cover -->
@@ -253,24 +330,175 @@
 				<!-- player -->
 				<div class="col-12 col-xl-6">
 					<center>
-						<span style="font-family: play;  text-align: center; color: rgb(253, 253, 253); font-size: 20px; font-weight: bold;"> Official Trailer - Paradise City   </span></center>
-						<div class="flowplayer-embed-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width:100%;">
-							<iframe webkitAllowFullScreen mozallowfullscreen allowfullscreen src="https://sblongvu.com/e/frnacu4eub1e.html" title="0" byline="0" portrait="0" frameborder="1" allow="autoplay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+						<style type="text/css">
+							.overlay {
+							  width: 100%;
+							  background: rgba(0,0,0,.75);
+							  position: fixed;
+							  left: 0;
+							  top: 0;
+							  bottom: 0;
+							  right: 0;
+							}
+							.videoBox {
+							  position: fixed;
+							  width: 90%;
+							  left: 50%;
+							  top:50%;
+							  transform: translateY(-50%) translateX(-50%);
+							  padding: 20px;
+							  background: #fff;
+							  text-align: center;
+							  border-radius: 5px;
+							}
+							.videoBox video {
+							  width: 100%;
+							}
+							.close {
+							  width: 36px;
+							  height: 36px;
+							  position: absolute;
+							  top: -18px;
+							  right: -18px;
+							  display: block;
+							  background: transparent url(images/close.png) no-repeat center center;
+							  opacity: .8;
+							}
+							.close:hover {
+							  opacity: 1;
+							}
+							@media (min-width: 767px) {
+							  .videoBox {
+								width: 50%;
+							  }
+							}
+							</style>
+							<div class="overlay">
+								<div class="videoBox" id="videobox">
+								  <a class="close"></a>
+								  <p>Up Coming Movies Soon</p>
+								  <video autoplay="true" preload="auto" controls src="/bhediya.mp4"></video>
+								</div>
+							  </div>
+								<script>
+									$(function() {	
+									// CLOSE AND REMOVE ON ESC
+									$(document).on('keyup',function(e) {
+										if (e.keyCode == 27) {
+										$('.overlay').remove();
+										}
+									});
+									
+									// CLOSE AND REMOVE ON CLICK
+									$('body').on('click','.overlay, .close', function() {
+										$('.overlay').remove();
+									});
+									
+									// SO PLAYING WITH THE VIDEO CONTROLS DOES NOT
+									// CLOSE THE POPUP
+									$('body').on('click','.videoBox', function(e) {
+										e.stopPropagation();
+									});
+									});
+									</script>
+										
+										
+						<!--<span style="font-family: play;  text-align: center; color: rgb(253, 253, 253); font-size: 20px; font-weight: bold;"> Watch Official Trailer First - Paradies City </span></center>
+						<video id="video" class="video-js vjs-default-skin vjs-big-play-centered" controls
+						preload="auto" width="640" height="360">	
+						  <source src="/paradise-city/Paradise City.mp4" type='video/mp4'/>
+						 
+					  </video>
+							<script type="text/javascript">
+								var options = {
+								ads: {
+									'skipAd': {
+									'enabled': true,
+									'timeOut': 5
+									},
+									'servers'  : [
+									{
+										'apiAddress': '../static/vast.xml'
+										//'apiAddress' : 'http://some.domain/xdr-redirect/?http://some.domain/xml/vast.xml', //for xdr only
+										//'xdrMethod': 'yql' //['yql' | 'xdr']
+									}
+									], 
+									'schedule' : [
+									{
+										'position' : 'mid-roll',
+										'startTime': '00:00:30'
+									},
+									{
+										'position' : 'post-roll'
+									}
+									]
+								}
+								};
+								_V_("video", options);
+							</script>-->
 							</div>
 						</div></div></div>
 						<p></p>
+						<center>
+						<a href="#videoStory" class="button more" id="videoLink">Official Trailer<i class="fa fa-play-circle" aria-hidden="true">&nbsp;</i></a>
+						<div id="videoStory" class="mfp-hide" style="max-width: 75%; margin: 0 auto;">
+							<center>
+							<video id="video" class="video-js vjs-default-skin vjs-big-play-centered" controls
+							  preload="auto" width="853" height="480" >	
+							  <source src="/paradise-city/Paradise City.mp4" type='video/mp4'/>
+							  <script type="text/javascript">
+								var options = {
+								ads: {
+									'skipAd': {
+									'enabled': true,
+									'timeOut': 5
+									},
+									'servers'  : [
+									{
+										'apiAddress': '../static/vast.xml'
+										//'apiAddress' : 'http://some.domain/xdr-redirect/?http://some.domain/xml/vast.xml', //for xdr only
+										//'xdrMethod': 'yql' //['yql' | 'xdr']
+									}
+									], 
+									'schedule' : [
+									{
+										'position' : 'mid-roll',
+										'startTime': '00:00:07'
+									},
+									{
+										'position' : 'post-roll'
+									}
+									]
+								}
+								};
+								_V_("video", options);
+							</script>
+						</div>
+					 </div>
+					 <p></p>
+					 <script>
+						$('#videoLink')
+						.magnificPopup({
+							  type:'inline',
+							  midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+						})
+						</script>
                         <center>
                             <span style="font-family: play;  text-align: center; color: rgb(253, 253, 253); font-size: 35px; font-weight: bold;"> Watch Movie - Paradise City   </span></center>
-
-				
+			
             <center>
+				
 				<P></P>
                 <div class="p2p2">
-                    <iframe class="video" src="https://sblongvu.com/e/guoqx2wm1asz.html" height="600" width="100%" webkitAllowFullScreen mozallowfullscreen allowfullscreen frameborder="1" scrolling="no"></iframe>
+					
+					<iframe class="video" src="https://sblongvu.com/e/guoqx2wm1asz.html" height="400" width="70%" webkitAllowFullScreen mozallowfullscreen allowfullscreen frameborder="1" scrolling="no"></iframe>
+					</div>
+				<script> 
+
+				</script>
                     </div></div>	</div></div></div></div></div></div>
 							<p></p>
-						
-									
+												
 						<div class="magnet-link"><a rel="nofollow" target="_blank" title="Download  Paradise City (2022)" href="#"> <span style="font-family: play;  text-align: center; font-size: 20px; font-weight: bold;">Download Paradise City (2022)  </a></div><p></p>
 							<div class="magnet-link"><a rel="nofollow" target="_blank" title="Download  Paradise City (2022)" href="https://sblongvu.com/d/guoqx2wm1asz.html"> <img class="img" src="download.webp" height="40" width="200"alt="Download 2022"></div>
 					
