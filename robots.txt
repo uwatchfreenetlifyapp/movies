@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://hubflix.netlify.app/sitemap.xml
+Sitemap: https://watchfreemuvi.netlify.app/sitemap.xml
